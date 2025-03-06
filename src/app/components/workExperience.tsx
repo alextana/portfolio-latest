@@ -59,14 +59,16 @@ export default function WorkExperience() {
   ]
 
   return (
-    <div className='max-w-[960px] px-4 mt-16 lg:px-0 mx-auto prose dark:prose-invert'>
+    <div className='max-w-[960px] px-4 mt-16 lg:px-0 mx-auto prose text-white'>
       <h3 className='text-lime-400 text-4xl tracking-tighter font-bold'>
         Work experience
       </h3>
       <div className='my-4' />
       {jobs.map((job, index) => (
         <div key={index} className={cn(index !== 0 && 'mt-12')}>
-          <h4 className='text-2xl font-bold leading-1.5'>{job.title}</h4>
+          <h4 className='text-2xl text-lime-400 font-bold leading-1.5'>
+            {job.title}
+          </h4>
           <p className='text-md'>
             {job.company} ({job.startDate} - {job.endDate})
           </p>
@@ -77,7 +79,8 @@ export default function WorkExperience() {
           <div className='my-4' />
           {job.techUsed && job.techUsed.length > 0 && (
             <p className='text-lg'>
-              <strong>Technologies used:</strong> {job.techUsed.join(', ')}.
+              <strong className='text-white'>Technologies used:</strong>{' '}
+              {job.techUsed.join(', ')}.
             </p>
           )}
         </div>
